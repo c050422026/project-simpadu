@@ -13,11 +13,20 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('student_id')->unsigned();
             $table->bigInteger('subject_id')->unsigned();
-            $table->dateTime('schedule_date');
-            $table->string('schedule_type');
-            $table->timestamps();
+            $table->string('hari');
+            $table->string('jam_mulai');
+            $table->string('jam_selesai');
+            $table->string('ruangan');
+            $table->bigInteger('kode_absensi')->unsigned();
+            $table->bigInteger('tahun_akademik')->unsigned();
+            $table->bigInteger('semester')->unsigned();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
+            $table->foreign('subject_id', 'subjectid_foreign')->references('id')->on('subjects');
+            $table->timestamps(); // Created and updated timestamps
+
         });
     }
 

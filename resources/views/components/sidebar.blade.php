@@ -26,6 +26,25 @@
 
                 </ul>
             </li>
+            <li class="nav-item dropdown ">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Subjects Id</span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('schedule.index') }}">Subjects Id</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown ">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Schedules</span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('schedule.index') }}">Schedule</a>
+                    </li>
+
+                </ul>
+            </li>
 
     </aside>
 </div>

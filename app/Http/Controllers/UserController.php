@@ -29,29 +29,28 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('pages.users.create');
+        return view('schedule.create');
     }
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreUserRequest $request)
+    public function store(StoreUserRequest $schedule)
     {
 
         User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            'roles' => $request['roles'],
-            'handphone' => $request['handphone'],
-            'address' => $request['address'],
+            'subject_id' => $schedule['subject_id'],
+            'hari' => $schedule['hari'],
+            'jam_mulai' => Hash::make($schedule['jam_mulai']),
+            'jam_selesai' => $schedule['jam_selesai'],
+            'ruangan' => $schedule['ruangan'],
         ]);
 
-        return redirect(route('user.index'))->with('success', 'data berhasil disimpan');
+        return redirect(route('schedule.index'))->with('success', 'data berhasil disimpan');
     }
 
     public function edit(User $user)
     {
-        return view('pages.users.edit')->with('user', $user);
+        return view('schedule.edit')->with('user', $user);
     }
 
     /**
